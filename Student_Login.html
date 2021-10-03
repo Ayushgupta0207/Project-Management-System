@@ -25,7 +25,7 @@
 
     }
 
-    #fname,#lname{
+    #fname,#Password{
         padding:1%;
         width:30%;
         outline: none;
@@ -38,14 +38,13 @@
         padding-right: 5%;
         padding-top: 0.7%;
         padding-bottom: 0.7%;
-        background-color:rgb(14, 14, 185);
+        background-color:rgb(18, 18, 194);
         color: white;
         font-family:sans-serif;
         margin-left: 8%;
-        border-radius: 12px;
     }
     .btn:hover{
-        background-color: red;
+        background-color: rgb(228, 10, 10);
     }
     header h1{
         background-color: rgb(18, 18, 194);
@@ -54,22 +53,19 @@
         font-family: Arial, Helvetica, sans-serif;
      
     }
-    a{
-        text-decoration: none;
-        color: white;
-    }
+  
     
 </style>
 <body>
     <header>
-        <h1>Instructor Corner</h1>
+        <h1>Student Corner</h1>
     </header>
     <main>
         <div class="Container">
          
             <center>
             <div class="logo">
-                <img src="../images/logo.png">
+                <img src="./images/logo.png">
             </div>
         </center>
         </div>
@@ -80,9 +76,10 @@
             <input type="text" id="fname" name="fname"><br><br>
             <br>
             <label for="lname">Password:&nbsp &nbsp &nbsp &nbsp</label>
-            <input type="Password" id="lname" name="lname">
+            <input type="Password" id="Password" name="lname"  minlength="8" required>
+            
         </form>
-        <button class="btn"><a href="./instructor_home.html">Login</a></button>
+        <button class="btn">Login</button>
         </center>
        
     </main>
