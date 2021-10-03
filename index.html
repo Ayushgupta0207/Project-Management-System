@@ -1,12 +1,80 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Project Management For Managers</title>
-</head>
-<body>
-    
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Project Management System</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      header {
+        width: 100%;
+        /* height: 60px; */
+        background-color: black;
+      }
+      header h1 {
+        color: white;
+        display: flex;
+        align-items: center;
+        text-align: center;
+        margin-left: 25px;
+      }
+      /* .image{
+          width: 50%;
+          display: flex;
+          align-items: center;
+          text-align: center;
+      } */
+      .container{
+          display: flex;
+          align-items: center;
+          justify-content: center;
+      }
+      .container1 img{
+         display: flex;
+         align-items: center;
+         justify-content: space-between;
+      }
+      button{
+          background-color: red;
+          border: 2px solid black;
+          padding: 5% 15%;
+      }
+      button:hover{background-color: blue;}
+      a{
+          text-decoration: none;
+          color: white;
+          font-size: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>Project Management System</h1>
+    </header>
+    <center>
+    <div class="image">
+        <img src="./images/logo.png" alt="">
+    </div>
+    </center>
+    <center>
+    <div class="container">
+        <div class="container1">
+            <img src="./images/1.png" alt="">
+            <h2>Student</h2>
+            <button><a href="">Log In</a></button>
+        </div>
+        &nbsp;&nbsp;
+        <div class="container1">
+            <img src="./images/1.png" alt="">
+            <h2>Teacher</h2>
+            <button><a href="">Log In</a></button>
+        </div>
+    </div>
+    </center>
+  </body>
 </html>
