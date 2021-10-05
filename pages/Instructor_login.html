@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <title>Login</title>
   </head>
   <style>
@@ -13,12 +14,19 @@
       box-sizing: border-box;
       font-family: Arial, Helvetica, sans-serif;
     }
+    body{
+        background: url(../images/back.png);
+        background-repeat: no-repeat;
+        background-size: cover;
+
+      }
     .logo {
       margin-top: 4%;
     }
     .form {
       font-size: 30px;
       margin-top: 4%;
+      color: white;
     }
 
     #fname,
@@ -43,37 +51,50 @@
     .btn:hover {
       background-color: red;
     }
-    header h1 {
+    /* header h1 {
       background-color: rgb(10, 134, 184);
       color: white;
       padding: 1%;
       font-family: Arial, Helvetica, sans-serif;
-    }
+    } */
     a {
       text-decoration: none;
       color: white;
     }
+    h1{
+        color: white;
+        font-family: Comic Sans MS, Comic Sans, cursive;
+        font-size: 55px;
+      }
+      .head{
+        margin-bottom: 8%;
+        margin-top: 3%;
+      }
   </style>
   <body>
-    <header>
+    <!-- <header>
       <h1>Instructor Corner</h1>
-    </header>
+    </header> -->
     <main>
       <div class="Container">
         <center>
-          <div class="logo">
+          <!-- <div class="logo">
             <img src="../images/logo.png" />
+          </div> -->
+          <div class="head">
+            <h1><i class="fa fa-sitemap"></i> Project Management System</h1>
           </div>
         </center>
       </div>
       <center>
         <form class="form">
-<<<<<<< HEAD
+
            
             <label for="fname">Email address:</label>
             <input type="text" id="fname" name="fname"><br><br>
             <br>
             <label for="lname">Password:&nbsp &nbsp &nbsp &nbsp</label>
+<<<<<<< HEAD
             <input type="Password" id="lname" name="lname">
 =======
           <label for="fname">Email address:</label>
@@ -86,6 +107,10 @@
           <input type="text" id="lname" name="lname" />
 >>>>>>> f9f4a72e4793259028cb1d2df5f3cf96c2ca0fbc
 >>>>>>> e56d4a8d4fbb6b173e9667387377a1bc8a861a98
+=======
+            <input type="Password" id="Password" name="lname">
+
+>>>>>>> fbe9b977d0e40c2c6a514e0cc462ac217364a320
         </form>
         <button class="btn"><a href="./instructor_home.html">Login</a></button>
       </center>
