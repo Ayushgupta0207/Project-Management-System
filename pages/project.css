@@ -18,6 +18,10 @@
     flex-wrap: wrap;
   }
  
+  #piechart{
+      display: flex;
+      align-items: c;
+  }
 /* .card{
     height: 400px;
     width: 25%;
@@ -69,6 +73,7 @@ nav ul ul li{
     float: none;
     display: list-item;
     position: relative;
+    z-index: 99999;
 
 }
 
@@ -77,6 +82,7 @@ nav ul ul ul li {
     position: relative;
     top: -60px;
     left: 170px;
+    z-index: 99999;
 }
 
 /* Change this in order to change the Dropdown symbol */
@@ -111,6 +117,9 @@ td{
     padding: 20px;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
+tr>td:hover{
+    background-color: cornsilk;
+}
 /* Pie chart Starts*/
 .main_div{
     /* width: 100vw; */
@@ -118,12 +127,15 @@ td{
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-bottom: 5%;
 }
 .center_div{
     width: calc(100vw - 40vw);
-    height: calc(100vh - 30vh);
+    /* height: calc(100vh - 30vh); */
     position: relative;
-    border: 1px solid #000;
+    border: 2px solid #000;
+    background-color: #fff;
+    padding-bottom: 3%;
 }
 .center_div h1{
     padding: 20px 0 20px 20px;
@@ -153,17 +165,22 @@ td{
 .pie-chart{
     background:radial-gradient(circle closest-side,transparent 100%,#fff 0),
     conic-gradient(from 180deg,
-    black 0,
-    black 35%,
-    green 0,
-    green 60%,
+    /* black 0, */
+    rgb(245, 74, 74) 35%,
+    lightgreen 0,
+    lightgreen 60%,
     yellow 0,
     yellow 75%,
-    lightgrey 0,
-    lightgrey 89%,
-    pink 0,
-     pink 11%   );
+    grey 0,
+    grey 89%,
+    rgb(255, 121, 143) 0,
+     rgb(250, 128, 149) 11%   );
     min-width: 300px;
     min-height: 450px;
 }
-/*Pie -Chart end
+/* /*Pie -Chart end */
+
+.main_div::after{
+    content: "";
+    display: block;
+}
