@@ -18,9 +18,10 @@
     flex-wrap: wrap;
   }
  
-  #piechart{
+  .piechart{
       display: flex;
-      align-items: c;
+      align-items: center;
+      
   }
 /* .card{
     height: 400px;
@@ -76,6 +77,7 @@ nav ul ul li{
     z-index: 99999;
 
 }
+
 
 /* ============ Second, Third and More Tiers ===========*/
 nav ul ul ul li {
@@ -177,10 +179,69 @@ tr>td:hover{
      rgb(250, 128, 149) 11%   );
     min-width: 300px;
     min-height: 450px;
+    
+    
 }
 /* /*Pie -Chart end */
 
 .main_div::after{
     content: "";
     display: block;
+}
+
+@media (max-width:800px){
+    .piechart{
+        display: flex;
+        align-items: center;
+        
+        
+    }
+    .pie-chart{
+        background:radial-gradient(circle closest-side,transparent 100%,#fff 0),
+        conic-gradient(from 180deg,
+        /* black 0, */
+        rgb(245, 74, 74) 35%,
+        lightgreen 0,
+        lightgreen 60%,
+        yellow 0,
+        yellow 75%,
+        grey 0,
+        grey 89%,
+        rgb(255, 121, 143) 0,
+         rgb(250, 128, 149) 11%   );
+        min-width: 300px;
+        min-height: 550px;
+       
+        
+        
+        
+    }
+}
+@media (max-width:1200px)and (min-width:801px){
+    .piechart{
+        display: flex;
+        align-items: center;
+        
+        
+    }
+    .pie-chart{
+        background:radial-gradient(circle closest-side,transparent 100%,#fff 0),
+        conic-gradient(from 180deg,
+        /* black 0, */
+        rgb(245, 74, 74) 35%,
+        lightgreen 0,
+        lightgreen 60%,
+        yellow 0,
+        yellow 75%,
+        grey 0,
+        grey 89%,
+        rgb(255, 121, 143) 0,
+         rgb(250, 128, 149) 11%   );
+        min-width: 300px;
+        min-height:100p;
+       
+        
+        
+        
+    }
 }

@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <title>Student Login</title>
 </head>
 <style>
@@ -14,23 +15,30 @@
       font-family: Arial, Helvetica, sans-serif;
     
     }
-    .logo{
+    body{
+        background: url(../images/back.png);
+        background-repeat: no-repeat;
+        background-size: cover;
+
+      }
+    /* .logo{
       margin-top: 4%;
 
-    }
+    } */
     .form{
         font-size: 30px;
         margin-top:4%;
-        
+        color: white;
 
     }
 
     #fname,#Password{
         padding:1%;
         width:30%;
-        outline: none;
+      
       
     } 
+    
     .btn{
         margin-top:3.9%;
         font-size: 30px;
@@ -38,45 +46,76 @@
         padding-right: 5%;
         padding-top: 0.7%;
         padding-bottom: 0.7%;
-        background-color:rgb(18, 18, 194);
+        background-color:rgb(10, 134, 184);
         color: white;
         font-family:sans-serif;
         margin-left: 8%;
+        border: rgb(10, 134, 184);
+     border-radius: 20px;
     }
+   
+    input {
+  border: 0;
+  outline: 0;
+  background: transparent;
+  border-bottom: 3px solid white;
+  color: aliceblue;
+  font-size: 20px;
+  
+}
+::placeholder{
+  color:white;
+  font-weight:bold;
+  opacity: 1;
+  font-size: 25px;
+ 
+}
     .btn:hover{
         background-color: rgb(228, 10, 10);
     }
-    header h1{
+    /* header h1{
         background-color: rgb(18, 18, 194);
         color: white;
         padding:1%;
         font-family: Arial, Helvetica, sans-serif;
      
-    }
+    } */
+    h1{
+        color: white;
+        font-family: Comic Sans MS, Comic Sans, cursive;
+        font-size: 55px;
+      }
+      .head{
+        margin-bottom: 8%;
+        margin-top: 3%;
+      }
   
     
 </style>
 <body>
-    <header>
+    <!-- <header>
         <h1>Student Corner</h1>
-    </header>
+    </header> -->
     <main>
         <div class="Container">
          
             <center>
-            <div class="logo">
+            <!-- <div class="logo">
                 <img src="./images/logo.png">
-            </div>
+            </div> -->
+            <div class="head">
+                <h1><i class="fa fa-sitemap"></i> Project Management System</h1>
+              </div>
         </center>
         </div>
         <center>
         <form class="form">
            
-            <label for="fname">Email address:</label>
-            <input type="text" id="fname" name="fname"><br><br>
+            <label for="fname"></label>
+            <input type="text" id="fname" name="fname" placeholder="Email"><br><br>
             <br>
-            <label for="lname">Password:&nbsp &nbsp &nbsp &nbsp</label>
-            <input type="Password" id="Password" name="lname"  minlength="8" required>
+            <label for="lname"></label>
+            <input type="Password" id="Password" name="lname"  minlength="8" required placeholder="Password">
             
         </form>
         <button class="btn">Login</button>
