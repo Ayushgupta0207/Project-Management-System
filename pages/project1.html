@@ -5,15 +5,344 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Project-1</title>
+    <script src="https://kit.fontawesome.com/29ee0bc57e.js" crossorigin="anonymous">
+    </script>
+    <script
+      defer
+      src="https://use.fontawesome.com/releases/v5.0.7/js/all.js"
+    ></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="style.css" />
+    <script>
+      function openSlideMenu() {
+        document.getElementById("menu").style.width = "250px";
+        document.getElementById("content").style.marginLeft = "250px";
+      }
+      function closeSlideMenu() {
+        document.getElementById("menu").style.width = "0";
+        document.getElementById("content").style.marginLeft = "0";
+      }
+    </script>
+    <script>
+        const todoList = [];
+
+const todoListElement = document.querySelector("#myUL");
+
+document.querySelector("#add_button").addEventListener("click", addTodo);
+document.querySelector("#myInput").addEventListener("keydown", function(e) {
+  if (e.keyCode == 13) {
+    addTodo()
+  }
+});
+
+//-------GETTING VALUES FROM INPUT TO ARRAY OF OBJECTS-------
+function addTodo() {
+  const todoText = document.querySelector("#myInput").value;
+
+  if (todoText == "") {
+    alert("You did not enter any item");
+  } else {
+    const todoObject = {
+      id: todoList.length,
+      todoText: todoText,
+      isDone: false,
+    };
+
+    //---WITH UNSHIFT WE ADD THE NEW ELEMENT TO THE BEGINNING OF THE ARRAY
+    //--SO THAT THE NEW ITEMS SHOW UP ON TOP
+    todoList.unshift(todoObject);
+    displayTodos();
+  }
+}
+
+//------CHANGING THE isDone VALUE TO TRUE WHEN THE ELEMENT IS CLICKED
+//------OR TO FALSE IF IT WAS TRUE BEFORE
+function doneTodo(todoId) {
+  const selectedTodoIndex = todoList.findIndex((item) => item.id == todoId);
+
+  todoList[selectedTodoIndex].isDone
+    ? (todoList[selectedTodoIndex].isDone = false)
+    : (todoList[selectedTodoIndex].isDone = true);
+  displayTodos();
+}
+
+//----TO DELETE AN ITEM; FROM THE LIST
+function deleteItem(x) {
+  todoList.splice(
+    todoList.findIndex((item) => item.id == x),
+    1
+  );
+  displayTodos();
+}
+
+//---------DISPLAYING THE ENTERED ITEMS ON THE SCREEN------
+function displayTodos() {
+  todoListElement.innerHTML = "";
+  document.querySelector("#myInput").value = "";
+
+  todoList.forEach((item) => {
+    const listElement = document.createElement("li");
+    const delBtn = document.createElement("i");
+
+    listElement.innerHTML = item.todoText;
+    listElement.setAttribute("data-id", item.id);
+
+    delBtn.setAttribute("data-id", item.id);
+    delBtn.classList.add("far");
+    delBtn.classList.add("fa-trash-alt");
+    delBtn.setAttribute("data-id", item.id);
+
+    if (item.isDone) {
+      listElement.classList.add("checked");
+    }
+
+    listElement.addEventListener("click", function (e) {
+      const selectedId = e.target.getAttribute("data-id");
+      doneTodo(selectedId);
+    });
+
+    delBtn.addEventListener("click", function (e) {
+      const delId = e.target.getAttribute("data-id");
+      deleteItem(delId);
+    });
+
+    todoListElement.appendChild(listElement);
+    listElement.appendChild(delBtn);
+  });
+}
+    </script>  
+    <style>
+      @import url("https://fonts.googleapis.com/css?family=Alegreya+Sans:800");
+
+      body {
+        font-family: "Alegreya Sans", sans-serif;
+        overflow-x: hidden;
+      }
+      .nav {
+        height: 100%;
+        width: 0;
+        position: fixed;
+        z-index: 1;
+        top: 0;
+        left: 0;
+        background-color: #111;
+        opacity: 0.9;
+        overflow-x: hidden;
+        padding-top: 60px;
+        transition: 0.7s;
+      }
+      .nav a {
+        display: block;
+        padding: 20px 30px;
+        font-size: 25px;
+        text-decoration: none;
+        color: #ccc;
+      }
+      .nav a:hover {
+        color: #fff;
+        transition: 0.4s;
+      }
+      .nav .close {
+        position: absolute;
+        top: 0;
+        right: 22px;
+        margin-left: 50px;
+        font-size: 30px;
+      }
+      .slide a {
+        color: #000;
+        font-size: 36px;
+      }
+      #content {
+        padding: 20px;
+        transition: margin-left 0.7s;
+        overflow: hidden;
+        width: 100%;
+      }
+      /* #image{
+         width: 80%;
+         height: 300px;
+         border: 2px solid black;
+          
+      } */
+      /* .picture{
+          background-image: url(../images/vc.jpg);
+          background-size: cover; */
+          /* width: 80%;
+      } */
+      .box1 {
+        width: 80%;
+        background-color: rgb(255, 243, 220);
+        display: block;
+        padding: 10px;
+        margin-bottom: 10px;
+        text-align: justify;
+        border-radius: 5px;
+      }
+
+      .box2 {
+        width: 80%;
+        background-color: rgb(255, 243, 220);
+        display: block;
+        padding: 10px;
+        text-align: justify;
+      }
+        .progress form {
+        display: flex;
+        /* justify-content: center; */
+        /* align-items: center; */
+        height: 8vh;
+    }
+    *{
+        background-color: blue;
+    }
+    .report {
+    background: linear-gradient(90deg, rgba(131,58,180,1) 0%,
+                                        rgba(253,29,29,1) 50%, 
+                                        rgba(252,176,69,1) 100%);
+    padding: 30px 40px;
+    color: white;
+    text-align: center;
+    }
+
+    .reprot h1 {
+    font-family: 'Acme', sans-serif;
+    letter-spacing: 2px;
+    margin-bottom: 15px;;
+    }
+
+    input {
+    width: 75%;
+    margin-right: 0;
+    padding: 10px;
+    border: none;
+    font-size: 14px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    }
+
+    .addBtn {
+    width: 25%;
+    padding: 10px;
+    margin-left:0;
+    background: #d9d9d9;
+    color: #555;
+    text-align: center;
+    font-size: 14px;
+    cursor: pointer;
+    transition: 0.3s;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: bold;
+    }
+
+    .addBtn:hover {
+    background-color: #bbb;
+    color: #FFF;
+    }
+
+    /* Style the list items */
+    ul li {
+    cursor: pointer;
+    position: relative;
+    padding: 12px 8px 12px 40px;
+    list-style-type: none;
+    background: #eee;
+    font-size: 14px;
+    transition: 0.2s;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+
+
+    /* make the list items unselectable */
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    }
+
+    /* Set all odd list items to a different color (zebra-stripes) */
+    ul li:nth-child(odd) {
+    background: #b2bec3;
+    }
+
+    /* Darker background-color on hover */
+    ul li:hover {
+    background: #ddd;
+    }
+
+    /* When clicked on, add a background color and strike out text */
+    ul li.checked {
+    background: #888;
+    color: #fff;
+    text-decoration: line-through;
+    }
+
+    /* Add a "checked" mark when clicked on */
+    ul li.checked::before {
+    content: "";
+    position: absolute;
+    border-color: #fff;
+    border-style: solid;
+    border-width: 0 2px 2px 0;
+    top: 10px;
+    left: 16px;
+    transform: rotate(45deg);
+    height: 15px;
+    width: 7px;
+    }
+
+    /* Style the trash button */
+    .far {
+    position: absolute;
+    right: 0;
+    top: 0;
+    padding: 12px 16px 12px 16px;
+    }
+
+    .far:hover {
+    background-color: tomato;
+    color: white;
+    }
+    </style>
   </head>
   <body>
-    <h1><u>Project:</u></h1>
-    <h3>Title - To design a simple web page using java</h3>
-    <h4>
-      Description: Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-      Quibusdam reprehenderit sit, deserunt adipisci illo perspiciatis!
-    </h4>
-    <h4>Mentor : Mr. Pankaj kapoor</h4>
-    
+    <div id="content">
+      <span class="slide">
+        <a href="#" onclick="openSlideMenu()">
+          <i class="fas fa-bars"></i>
+        </a>
+      </span>
+
+      <div id="menu" class="nav">
+        <a href="#" class="close" onclick="closeSlideMenu()">
+          <i class="fas fa-times"></i>
+        </a>
+        <a href="#">Dasboard</a>
+        <a href="#">Projects</a>
+        <a href="#">Profile</a>
+        <a href="#">SignOut</a>
+      </div>
+      <div id="image">
+        <div class="picture">
+            <img src="../images/vc.jpg" alt="" width="80%" height="300px">
+        </div>
+      </div>
+      <div id="#project details">
+        <h1><u>Project:</u></h1>
+        <h2>Title -</h2>
+        <h3>
+          Description : Lorem ipsum dolor sit amet, consectetur adipisicing
+          elit. Itaque magni cum veniam aperiam, iure omnis.
+        </h3>
+        <h3>Mentor : Mr. Pankaj Kapoor</h3>
+        </div>
+       <div class="report">
+        <h1>To Do List</h1>
+        <input type="text" id="myInput" placeholder="Things to be done..." />
+        <span class="addBtn" id="add_button">Add</span>
+        <ul id="myUL">
+      
+        </ul>
+       </div>
+      </div>
+    </div>
   </body>
 </html>
