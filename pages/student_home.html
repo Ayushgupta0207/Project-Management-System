@@ -12,6 +12,7 @@
         document.getElementById("menu").style.width = "250px";
         document.getElementById("content").style.marginLeft = "250px";
       }
+      
       function closeSlideMenu() {
         document.getElementById("menu").style.width = "0";
         document.getElementById("content").style.marginLeft = "0";
@@ -19,7 +20,12 @@
     </script>
     <style>
       @import url("https://fonts.googleapis.com/css?family=Alegreya+Sans:800");
-
+      
+      *{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
       body {
         font-family: "Alegreya Sans", sans-serif;
         overflow-x: hidden;
@@ -31,7 +37,7 @@
         z-index: 1;
         top: 0;
         left: 0;
-        background-color: #111;
+        background-color:rgb(43, 163, 211);
         opacity: 0.9;
         overflow-x: hidden;
         padding-top: 60px;
@@ -42,11 +48,12 @@
         padding: 20px 30px;
         font-size: 25px;
         text-decoration: none;
-        color: #ccc;
+        color: white;
       }
       .nav a:hover {
-        color: #fff;
+        color:white;
         transition: 0.4s;
+
       }
       .nav .close {
         position: absolute;
@@ -56,34 +63,269 @@
         font-size: 30px;
       }
       .slide a {
-        color: #000;
-        font-size: 36px;
+        color: white;
+        font-size: 43px;
+        margin-right: 1%;
       }
+      
       #content {
-        padding: 20px;
+        /* padding: 20px; */
+        margin-left: 2%;
         transition: margin-left 0.7s;
         overflow: hidden;
         width: 100%;
       }
+      .box{
+        height: 500px;
+        width: 24%;
+       /* border-radius: 10px; */
+       /* border:2px solid rgb(114, 6, 6); */
+        margin-right: 2%;
+        margin-left: 2.4%;
+        margin-top: 2%;
+        
+      }
+      .box-conatiner{
+        display: flex;
+        
+        flex-wrap: wrap;
+        
+        
+      }
+      header{
+        background-color: rgb(43, 163, 211);
+        color: white;
+        font-size: 35px;
+        padding-top: 1%;
+        padding-bottom: 1%;
+        border-radius: 10px;
+        padding-left: 3%;
+       margin-bottom: 1.4%;
+
+        
+      }
+      .half-box1{
+        height: 26%;
+        width: 100%;
+        background-color:rgb(206, 13, 52);
+        font-size: 40px;
+        color:white;
+        font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+        padding: 2%;
+        /* border-radius: 10px; */
+      }
+      .half-box2{
+        height: 26%;
+        width: 100%;
+        background-color:darkblue;
+        font-size: 40px;
+        color:white;
+        font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+        padding: 2%;
+        /* border-radius: 10px; */
+      }
+      .half-box3{
+        height: 26%;
+        width: 100%;
+        background-color:rgb(110, 5, 110);
+        font-size: 40px;
+        color:white;
+        font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+        padding: 2%;
+        /* border-radius: 10px; */
+
+      }
+      p{
+        font-size: 17px;
+        padding: 1%;
+      }
+      .middle-box1{
+        background-image: url(../images/img3.jpg);
+        height: 60%;
+        width: 100%;
+        background-repeat:no-repeat;
+        background-size: cover;
+      }
+      .middle-box2{
+        background-image: url(../images/img1.jpg);
+        height: 60%;
+        width: 100%;
+        background-repeat:no-repeat;
+        background-size: cover;
+      }
+      .middle-box3{
+        background-image: url(../images/img2.jpg);
+        background-repeat:no-repeat;
+        background-size: cover;
+        height: 60%;
+        width: 100%;
+      }
+      .box{
+        background-color:white;
+     
+      }
+      .link a{
+       text-decoration: none;
+       font-size: 20px;
+       color: white;
+      }
+      .link:hover{
+        background-color: red;
+        transition: 0.7s;
+      }
+      .link{
+        padding-left: 3%;
+        padding-right: 3%;
+        padding-bottom: 3%;
+        padding-top: 3%;
+        transition: 0.7s;
+        background-color: rgb(9, 6, 151);
+        margin:3%;
+        text-align: center;
+        border-radius: 10px;
+
+
+      }
+      .an:hover{
+       background-color: orangered;
+       transition: 0.5s;
+      }
+      
+      .blink {
+  animation: blink 1s steps(1, end) infinite;
+ font-size: 25px;
+ margin-left: 1%;
+ 
+}
+
+@keyframes blink {
+  0% {
+    opacity: 10;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 2;
+  }
+}
+
+      
+      @media (max-width:800px){
+        .box-conatiner{
+        display: flex;
+        
+        flex-wrap: wrap;
+        flex-direction: column;
+              
+        
+      }
+      .box{
+        width: 40%;
+        margin:5%;
+        
+      }
+      .half-box1{
+        height: 35%;
+        
+      }
+      .half-box2{
+        height: 35%;
+      }
+      .half-box3{
+        height: 35%;
+      }
+      .slide a {
+        color: white;
+        font-size: 25px;
+        margin-right: 1%;
+      }
+      header{
+        background-color: rgb(43, 163, 211);
+        color: white;
+        font-size: 25px;
+        padding-top: 1%;
+        padding-bottom: 1%;
+        border-radius: 10px;
+        padding-left: 3%;
+       margin-bottom: 1.4%;
+
+        
+      }
+   .warning{
+     display: none;
+     
+   }
+}
+      
+      
     </style>
   </head>
   <body>
+    
     <div id="content">
-      <span class="slide">
-        <a href="#" onclick="openSlideMenu()">
-          <i class="fas fa-bars"></i>
-        </a>
-      </span>
+      <header>
+        <span class="slide">
+          <a href="#" onclick="openSlideMenu()">
+            <i class="fas fa-bars"></i>
+          </a>
+        </span>
+        <i class="fa fa-chart-line"></i>&nbsp Dashboard
+      </header>
+
 
       <div id="menu" class="nav">
         <a href="#" class="close" onclick="closeSlideMenu()">
           <i class="fas fa-times"></i>
         </a>
-        <a href="#">Dasboard</a>
-        <a href="#">Projects</a>
-        <a href="#">Profile</a>
-        <a href="#">SignOut</a>
+        <a href="#" class="an">Dasboard</a>
+        <a href="#" class="an">Projects</a>
+        <a href="./Student_profile.html" class="an">Profile</a>
+        <a href="./Student_Login.html" class="an" target="_self">SignOut</a>
+      </div> 
+      <div class="warning">
+      <h3 class="blink" style="color: red;">Last date of submission Bug tracking system is 10/11/2021</h3>
+    </div>
+      <div class="box-conatiner">
+        <div class="box">
+           <div class="half-box1">
+              Bug tracking System  <br>
+              <p><i class="fa fa-user"></i> Pankaj Kapoor</p>
+           </div>
+           <div class="middle-box1">
+
+           </div>
+           <div class="link">
+         <a href="#">View Project</a>
+           </div>
+        </div>
+        <div class="box">
+             <div class="half-box2">
+            E-Commerce Website <br>
+            <p><i class="fa fa-user"></i> Neeraj khanna</p>
+           </div>
+           <div class="middle-box2">
+             
+          </div>
+          <div class="link">
+            <a href="#">View Project</a>
+          </div>
+        </div>
+        <div class="box">
+          <div class="half-box3">
+             Stock Management System <br>
+             <p><i class="fa fa-user"></i> Divyansh Bhardwaj</p>
+
+          </div>
+          <div class="middle-box3">
+             
+          </div>
+          <div class="link">
+            <a href="#">View Project</a>
+          </div>
+        </div>
       </div>
     </div>
+    
   </body>
 </html>
