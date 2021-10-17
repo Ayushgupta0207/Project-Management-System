@@ -9,6 +9,15 @@
 
 
 </head>
+<script>
+ function verify(){
+  let x = document.forms["myForm"]["fname"].value;
+  if (x == "") {
+    alert("Name must be filled out");
+    return false;
+  }
+ }
+</script>
 <style>
     *{
       margin: 0;
@@ -113,7 +122,7 @@
         </center>
         </div>
         <center>
-            <form class="form">
+            <form name="myForm" class="form" onsubmit="return verify()" method="post" required>
 
                 <label for="fname"></label>
                 <input type="text" id="fname" name="fname" placeholder="Email" /><br /><br />
@@ -122,7 +131,7 @@
                 <input type="password" id="Password" name="lname" placeholder="Password" />
       
               </form>
-        <button class="btn"><a href="./student_home.html">Login</a></button>
+        <button class="btn" value="Submit"><a href="./student_home.html">Login</a></button>
         </center>
        
     </main>

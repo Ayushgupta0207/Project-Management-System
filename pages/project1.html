@@ -13,110 +13,20 @@
     ></script>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="style.css" />
-    <script>
-      function openSlideMenu() {
-        document.getElementById("menu").style.width = "250px";
-        document.getElementById("content").style.marginLeft = "250px";
-      }
-      function closeSlideMenu() {
-        document.getElementById("menu").style.width = "0";
-        document.getElementById("content").style.marginLeft = "0";
-      }
-    </script>
-    <script>
-        const todoList = [];
-
-const todoListElement = document.querySelector("#myUL");
-
-document.querySelector("#add_button").addEventListener("click", addTodo);
-document.querySelector("#myInput").addEventListener("keydown", function(e) {
-  if (e.keyCode == 13) {
-    addTodo()
-  }
-});
-
-//-------GETTING VALUES FROM INPUT TO ARRAY OF OBJECTS-------
-function addTodo() {
-  const todoText = document.querySelector("#myInput").value;
-
-  if (todoText == "") {
-    alert("You did not enter any item");
-  } else {
-    const todoObject = {
-      id: todoList.length,
-      todoText: todoText,
-      isDone: false,
-    };
-
-    //---WITH UNSHIFT WE ADD THE NEW ELEMENT TO THE BEGINNING OF THE ARRAY
-    //--SO THAT THE NEW ITEMS SHOW UP ON TOP
-    todoList.unshift(todoObject);
-    displayTodos();
-  }
-}
-
-//------CHANGING THE isDone VALUE TO TRUE WHEN THE ELEMENT IS CLICKED
-//------OR TO FALSE IF IT WAS TRUE BEFORE
-function doneTodo(todoId) {
-  const selectedTodoIndex = todoList.findIndex((item) => item.id == todoId);
-
-  todoList[selectedTodoIndex].isDone
-    ? (todoList[selectedTodoIndex].isDone = false)
-    : (todoList[selectedTodoIndex].isDone = true);
-  displayTodos();
-}
-
-//----TO DELETE AN ITEM; FROM THE LIST
-function deleteItem(x) {
-  todoList.splice(
-    todoList.findIndex((item) => item.id == x),
-    1
-  );
-  displayTodos();
-}
-
-//---------DISPLAYING THE ENTERED ITEMS ON THE SCREEN------
-function displayTodos() {
-  todoListElement.innerHTML = "";
-  document.querySelector("#myInput").value = "";
-
-  todoList.forEach((item) => {
-    const listElement = document.createElement("li");
-    const delBtn = document.createElement("i");
-
-    listElement.innerHTML = item.todoText;
-    listElement.setAttribute("data-id", item.id);
-
-    delBtn.setAttribute("data-id", item.id);
-    delBtn.classList.add("far");
-    delBtn.classList.add("fa-trash-alt");
-    delBtn.setAttribute("data-id", item.id);
-
-    if (item.isDone) {
-      listElement.classList.add("checked");
-    }
-
-    listElement.addEventListener("click", function (e) {
-      const selectedId = e.target.getAttribute("data-id");
-      doneTodo(selectedId);
-    });
-
-    delBtn.addEventListener("click", function (e) {
-      const delId = e.target.getAttribute("data-id");
-      deleteItem(delId);
-    });
-
-    todoListElement.appendChild(listElement);
-    listElement.appendChild(delBtn);
-  });
-}
-    </script>  
+    
+   
     <style>
       @import url("https://fonts.googleapis.com/css?family=Alegreya+Sans:800");
 
       body {
         font-family: "Alegreya Sans", sans-serif;
         overflow-x: hidden;
+       
+      }
+      *{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
       }
       .nav {
         height: 100%;
@@ -136,7 +46,7 @@ function displayTodos() {
         padding: 20px 30px;
         font-size: 25px;
         text-decoration: none;
-        color: #ccc;
+        color: white;
       }
       .nav a:hover {
         color: #fff;
@@ -150,8 +60,11 @@ function displayTodos() {
         font-size: 30px;
       }
       .slide a {
-        color: #000;
+        color:orange;
         font-size: 36px;
+        margin:-15%;
+        
+        
       }
       #content {
         padding: 20px;
@@ -172,7 +85,7 @@ function displayTodos() {
       } */
       .box1 {
         width: 80%;
-        background-color: rgb(255, 243, 220);
+        background-color:white;
         display: block;
         padding: 10px;
         margin-bottom: 10px;
@@ -182,7 +95,7 @@ function displayTodos() {
 
       .box2 {
         width: 80%;
-        background-color: rgb(255, 243, 220);
+        background-color: white;
         display: block;
         padding: 10px;
         text-align: justify;
@@ -192,125 +105,140 @@ function displayTodos() {
         /* justify-content: center; */
         /* align-items: center; */
         height: 8vh;
+     
     }
     *{
-        background-color: blue;
+        background-color: white;
     }
-    .report {
-    background: linear-gradient(90deg, rgba(131,58,180,1) 0%,
-                                        rgba(253,29,29,1) 50%, 
-                                        rgba(252,176,69,1) 100%);
-    padding: 30px 40px;
+     form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+   
+   
+}
+
+/* h1 {
+    font-size: 40px;
+    letter-spacing: 1px;
     color: white;
-    text-align: center;
-    }
+} */
 
-    .reprot h1 {
-    font-family: 'Acme', sans-serif;
-    letter-spacing: 2px;
-    margin-bottom: 15px;;
-    }
-
-    input {
-    width: 75%;
-    margin-right: 0;
+form input,
+form button {
     padding: 10px;
+    font-size: 25px;
+    outline: none;
     border: none;
-    font-size: 14px;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    }
+    border-radius: 15px;
+    background: white;
+    
+}
 
-    .addBtn {
-    width: 25%;
-    padding: 10px;
-    margin-left:0;
-    background: #d9d9d9;
-    color: #555;
-    text-align: center;
-    font-size: 14px;
+
+form button {
+    margin-left: 1%;
+    background-color: white;
     cursor: pointer;
-    transition: 0.3s;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    font-weight: bold;
-    }
 
-    .addBtn:hover {
-    background-color: #bbb;
-    color: #FFF;
-    }
+}
 
-    /* Style the list items */
-    ul li {
-    cursor: pointer;
-    position: relative;
-    padding: 12px 8px 12px 40px;
-    list-style-type: none;
-    background: #eee;
-    font-size: 14px;
-    transition: 0.2s;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
+form button:hover {
 
-
-    /* make the list items unselectable */
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
-    }
-
-    /* Set all odd list items to a different color (zebra-stripes) */
-    ul li:nth-child(odd) {
-    background: #b2bec3;
-    }
-
-    /* Darker background-color on hover */
-    ul li:hover {
-    background: #ddd;
-    }
-
-    /* When clicked on, add a background color and strike out text */
-    ul li.checked {
-    background: #888;
-    color: #fff;
-    text-decoration: line-through;
-    }
-
-    /* Add a "checked" mark when clicked on */
-    ul li.checked::before {
-    content: "";
-    position: absolute;
-    border-color: #fff;
-    border-style: solid;
-    border-width: 0 2px 2px 0;
-    top: 10px;
-    left: 16px;
-    transform: rotate(45deg);
-    height: 15px;
-    width: 7px;
-    }
-
-    /* Style the trash button */
-    .far {
-    position: absolute;
-    right: 0;
-    top: 0;
-    padding: 12px 16px 12px 16px;
-    }
-
-    .far:hover {
-    background-color: tomato;
+    background-color: skyblue;
     color: white;
-    }
+}
+
+.todo-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.todo-list {
+    list-style: none;
+    min-width: 24%;
+}
+
+.todo {
+
+    background-color: white;
+    margin: 8px;
+    color: purple;
+    font-size: 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.todo-li {
+    flex: 1;
+    margin: 0 8px;
+}
+
+.chk-btn {
+    background-color: green;
+    color: white;
+    outline: none;
+    padding: 10px;
+    font-size: 15px;
+}
+
+.del-btn {
+    background-color: red;
+    color: white;
+    outline: none;
+    padding: 10px;
+    font-size: 15px;
+}
+
+.fa-trash,
+.fa-check {
+    pointer-events: none;
+
+}
+.image{
+  background-image: url(../images/img1.jpg);
+  width: 100%;
+  background-repeat:space;
+  background-size: cover;
+  height:300px;
+  border-radius: 10px;
+  display:flex;
+  
+}
+
+.done {
+    text-decoration: line-through;
+    opacity: .5;
+}
+.form{
+  width: 80%;
+}
     </style>
   </head>
   <body>
     <div id="content">
+      
+    
+      
+      <header>
+ 
       <span class="slide">
         <a href="#" onclick="openSlideMenu()">
           <i class="fas fa-bars"></i>
+          
         </a>
+     
       </span>
 
+</div>
+<div class="image">
+
+</div>
+    </header>
       <div id="menu" class="nav">
         <a href="#" class="close" onclick="closeSlideMenu()">
           <i class="fas fa-times"></i>
@@ -320,11 +248,7 @@ function displayTodos() {
         <a href="#">Profile</a>
         <a href="#">SignOut</a>
       </div>
-      <div id="image">
-        <div class="picture">
-            <img src="../images/vc.jpg" alt="" width="80%" height="300px">
-        </div>
-      </div>
+     
       <div id="#project details">
         <h1><u>Project:</u></h1>
         <h2>Title -</h2>
@@ -334,15 +258,88 @@ function displayTodos() {
         </h3>
         <h3>Mentor : Mr. Pankaj Kapoor</h3>
         </div>
-       <div class="report">
-        <h1>To Do List</h1>
-        <input type="text" id="myInput" placeholder="Things to be done..." />
-        <span class="addBtn" id="add_button">Add</span>
-        <ul id="myUL">
-      
-        </ul>
-       </div>
+         <div>
+        <form>
+            <input type="text" class="todo-input"/>
+            <button class="todo-btn">
+                <i class="fa fa-plus-square" aria-hidden="true"></i>
+            </button>
+        </form>
+        
+        <div class="todo-container">
+            <ul class="todo-list">
+        
+        
+            </ul>
+          </div>
+        </div>
       </div>
     </div>
+
+    <script>
+      var todoInput = document.querySelector(".todo-input");
+var todobtn = document.querySelector(".todo-btn");
+var todoList = document.querySelector(".todo-list");
+
+todobtn.onclick = create;
+
+
+function create(e) {
+    e.preventDefault();
+
+    if (todoInput.value) {
+        var newDiv = document.createElement("div");
+        newDiv.classList.add("todo");
+
+        var newli = document.createElement("li");
+        newli.classList.add("todo-li");
+        newli.innerHTML = todoInput.value;
+
+        newDiv.appendChild(newli);
+
+        var chkbtn = document.createElement("button");
+        chkbtn.classList.add("chk-btn");
+        chkbtn.innerHTML = '<i class="fa fa-check"></i>';
+        newDiv.appendChild(chkbtn);
+
+        var delbtn = document.createElement("button");
+        delbtn.classList.add("del-btn");
+        delbtn.innerHTML = '<i class= "fa fa-trash"></i>';
+        newDiv.appendChild(delbtn);
+        todoInput.value = "";
+
+        todoList.appendChild(newDiv);
+
+        todoList.onclick = chkdel;
+
+        function chkdel(e) {
+            var item = e.target;
+            if (item.classList[0] === "del-btn") {
+                var parent = item.parentNode;
+                parent.remove();
+            }
+            if (item.classList[0] === "chk-btn") {
+                var parent = item.parentNode;
+                parent.classList.toggle("done");
+            }
+        }
+
+    } else {
+        alert("Field can't be empty. Enter value");
+    }
+
+}
+    </script>
+    <script>
+      function openSlideMenu() {
+        document.getElementById("menu").style.width = "250px";
+        document.getElementById("content").style.marginLeft = "250px";
+      }
+      function closeSlideMenu() {
+        document.getElementById("menu").style.width = "0";
+        document.getElementById("content").style.marginLeft = "0";
+      }
+    </script>
+   
   </body>
 </html>
