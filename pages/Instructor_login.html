@@ -57,19 +57,18 @@
   border: 0;
   outline: 0;
   background: transparent;
-  border-bottom: 3px solid black;
+  border-bottom: 3px solid rgb(155, 9, 38);
   color: aliceblue;
   font-size: 20px;
   
 }
 ::placeholder{
-  color:black;
+  color:rgb(155, 9, 38);
   font-weight:bold;
   opacity: 1;
   font-size: 25px;
  
 }
-
     .btn:hover {
       background-color: red;
     }
@@ -92,6 +91,35 @@
         margin-bottom: 8%;
         margin-top: 3%;
       }
+      @media (max-width:800px){
+  #fname,#Password{
+        padding:1%;
+        width:70%;
+        outline: none;
+        margin-top: 10%;
+      
+    } 
+    .btn {
+      margin-top: 20%;
+      font-size: 30px;
+      padding-left: 20%;
+      padding-right: 20%;
+      padding-top: 1%;
+      padding-bottom: 1%;
+      background-color: rgb(10, 134, 184);
+      color: white;
+      font-family: sans-serif;
+      margin-left: 8%;
+     border: rgb(10, 134, 184);
+     border-radius: 20px;
+     transition: 0.5s;
+    }
+    h1{
+        color: white;
+        font-family: Comic Sans MS, Comic Sans, cursive;
+        font-size: 40px;
+      }
+}
   </style>
   <body>
     <!-- <header>
@@ -119,7 +147,7 @@
           <input type="password" id="Password" name="lname" placeholder="Password" />
 
         </form>
-        <button class="btn"><a href="./Admin-dashboard.html">Login</a></button>
+        <button class="btn"><a href="./Admin-dashboard1.html">Login</a></button>
       </center>
     </main>
   </body>
