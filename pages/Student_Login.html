@@ -122,19 +122,34 @@
         </center>
         </div>
         <center>
-            <form name="myForm" class="form" onsubmit="return verify()" method="post" required>
+            <form name="myform" class="form" onsubmit="return validateform()" method="post" required>
 
-                <label for="fname"></label>
-                <input type="text" id="fname" name="fname" placeholder="Email" /><br /><br />
+                <label for="email"></label>
+                <input type="email" id="fname" name="email" placeholder="Email" /><br /><br />
                 <br />
-                <label for="lname"></label>
-                <input type="password" id="Password" name="lname" placeholder="Password" />
+                <label for="password"></label>
+                <input type="password" id="Password" name="password" placeholder="Password" />
       
               </form>
-        <button class="btn" value="Submit"><a href="./student_home.html">Login</a></button>
+        <button class="btn" >
+          <input type="submit" value="Submit">
+        </button>
         </center>
        
     </main>
-    
+    <script>
+      function validateform() {
+        var name = document["myform"]["email"].value;
+        var password = document["myform"]["password"].value;
+        if(name==null|| name ==""){
+          alert("Name must be fiiled");
+          return false;
+        } 
+        else if(password.length<6){
+          alert("Password must be at least 6 chrachters long");
+          return false;
+        }
+      }
+    </script>
 </body>
 </html>
