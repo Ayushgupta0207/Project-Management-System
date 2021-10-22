@@ -13,10 +13,31 @@
     ></script>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="style.css" />
-    <script>
+    <!-- <script>
       function openSlideMenu() {
         document.getElementById("menu").style.width = "250px";
         document.getElementById("content").style.marginLeft = "250px";
+      }
+      function closeSlideMenu() {
+        document.getElementById("menu").style.width = "0";
+        document.getElementById("content").style.marginLeft = "0";
+      }
+    </script> -->
+    <script>
+      // function openSlideMenu() {
+      //   document.getElementById("menu").style.width = "250px";
+      //   document.getElementById("content").style.marginLeft = "250px";
+      // }
+      function openSlideMenu1(){
+        var x = window.matchMedia("(max-width:1000px) and (min-width:350px")
+        if (x.matches){
+        document.getElementById("menu").style.width = "350px";
+        }
+        else{
+          document.getElementById("menu").style.width = "250px";
+          document.getElementById("content").style.marginLeft = "250px";
+        }
+        x.addListener(openSlideMenu1);
       }
       function closeSlideMenu() {
         document.getElementById("menu").style.width = "0";
@@ -225,14 +246,26 @@
     .picture img{
       border-radius: 20px;
     }
-    
+    @media(max-width:400px){
+      .picture img{
+        width: 100%;
+        height: 200px;
+      }
+    }
+    @media(min-width:400px)and(max-width:1000px){
+      .picture img{
+        width: 100%;
+        height: 280px;
+      }
+    }
+
     </style>
   </head>
   <body>
     <div id="content">
       <header>
       <span class="slide">
-        <a href="#" onclick="openSlideMenu()">
+        <a href="#" onclick="openSlideMenu1()">
           <i class="fas fa-bars"></i>
         </a>
         
@@ -242,7 +275,7 @@
         <a href="#" class="close" onclick="closeSlideMenu()">
           <i class="fas fa-times"></i>
         </a>
-        <a href="../pages/student_home.html" class="an">Dasboard</a>
+        <a href="../pages/student_home.html" class="an">Dashboard</a>
        
         <a href="../pages/Student_profile.html" class="an">Profile</a>
         <a href="../pages/Student_Login.html" class="an">SignOut</a>
@@ -338,5 +371,6 @@ function create(e) {
 
 }
     </script>
+   
   </body>
 </html>
