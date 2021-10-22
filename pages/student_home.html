@@ -7,7 +7,7 @@
       src="https://use.fontawesome.com/releases/v5.0.7/js/all.js"
     ></script>
     <link rel="stylesheet" href="style.css" />
-    <script>
+    <!-- <script>
       function openSlideMenu1(){
         var x = window.matchMedia("(max-width:900px)")
         if (x.matches){
@@ -22,8 +22,8 @@
       function closeSlideMenu() {
         document.getElementById("menu").style.width = "0";
         document.getElementById("content").style.marginLeft = "0";
-      }
-    </script>
+      } -->
+   
     <style>
       @import url("https://fonts.googleapis.com/css?family=Alegreya+Sans:800");
       
@@ -468,6 +468,26 @@
       </div>
       </div>
       
-    
+      <script>
+        // function openSlideMenu() {
+        //   document.getElementById("menu").style.width = "250px";
+        //   document.getElementById("content").style.marginLeft = "250px";
+        // }
+        function openSlideMenu1(){
+          var x = window.matchMedia("(max-width:1000px) and (min-width:400px")
+          if (x.matches){
+          document.getElementById("menu").style.width = "250px";
+          }
+          else{
+            document.getElementById("menu").style.width = "250px";
+            document.getElementById("content").style.marginLeft = "250px";
+          }
+          x.addListener(openSlideMenu1);
+        }
+        function closeSlideMenu() {
+          document.getElementById("menu").style.width = "0";
+          document.getElementById("content").style.marginLeft = "0";
+        }
+      </script>
   </body>
 </html>
