@@ -46,7 +46,9 @@
     </script>
     <style>
       @import url("https://fonts.googleapis.com/css?family=Alegreya+Sans:800");
-
+      *{
+        box-sizing: border-box;
+      }
       body {
         font-family: "Alegreya Sans", sans-serif;
         overflow-x: hidden;
@@ -129,6 +131,14 @@
         /* align-items: center; */
         height: 8vh;
     }
+    /* header{
+      background-image: url(../images/img1.jpg);
+      background-size: cover;
+      width: 80%;
+      height: 300px;
+      display: flex;
+      background-repeat:space;
+    } */
       .report h1{
         display: flex;
         justify-content:left;
@@ -138,8 +148,8 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        width: 80%;
-        margin-left: 11%;
+        width: 60%;
+        margin-left: 3%;
         border:2px solid black;
         border-radius: 10px;
     }
@@ -186,30 +196,31 @@
 
     .todo-container {
         display: flex;
-        justify-content: center;
-        align-items: center;
+        justify-content: left;
 
     }
 
     .todo-list {
         list-style: none;
-        width: 80%;
+        width: 60%;
+        justify-content: left;
     }
 
     .todo {
 
         background-color: wheat;
-        margin: 0px 0px;
+        margin: 10px 0px;
         color: purple;
         font-size: 24px;
         display: flex;
         justify-content: left;
+        align-self: start;
     }
 
     .todo-li {
         flex: 1;
         margin: 0 0px;
-        background-color: wheat;
+        background-color: rgb(250, 240, 220);
     }
 
     /* .chk-btn {
@@ -242,6 +253,12 @@
       font-size: 20px;
       font-style: italic;
     }
+    .nav .close img{
+        width: 70px;
+        height: 70px;
+        border-radius: 50px;
+       
+    }
     .picture img{
       border-radius: 20px;
     }
@@ -263,7 +280,7 @@
     <div id="content">
       <header>
       <span class="slide">
-        <a href="#" onclick="openSlideMenu()">
+        <a href="#" onclick="openSlideMenu1()">
           <i class="fas fa-bars"></i>
         </a>
         
