@@ -105,13 +105,37 @@
         background: linear-gradient(90deg, transparent, #03e9f4);
         animation: btn-anim1 1s linear infinite;
       }
-      select{
-          margin-top: 10%;
-          width: 28%;
-          text-align: centre;
+      select {
+        margin-top: 10%;
+        width: 28%;
+        text-align: centre;
       }
-      option{
-          text-align: center;
+      option {
+        text-align: center;
+      }
+      button a {
+        text-decoration: none;
+      }
+      .dashboard {
+        background-color: rgb(252, 78, 78);
+        color:white;
+        padding: 10px 20px;
+        border-radius: 4px;
+        border-color: black;
+        border-radius: 12px;
+      }
+      .dashboard:hover{
+          background-color: red;
+      }
+      .dashboard a{
+          color: white;
+          font-size: 18px;
+      }
+
+      #mybutton {
+        position: fixed;
+        bottom: 25px;
+        right: 15px;
       }
 
       @keyframes btn-anim1 {
@@ -183,6 +207,30 @@
           bottom: 100%;
         }
       }
+      @media(max-width:500px){
+        .dashboard {
+        background-color: rgb(252, 78, 78);
+        color:white;
+        padding: 10px 20px;
+        border-radius: 4px;
+        border-color: black;
+        border-radius: 12px;
+      }
+      .dashboard:hover{
+          background-color: red;
+      }
+      .dashboard a{
+          color: white;
+          font-size: 18px;
+      }
+
+      #mybutton {
+        position: fixed;
+        bottom: 1px;
+        right: 15px;
+      }
+
+      }
     </style>
   </head>
   <body>
@@ -202,22 +250,22 @@
           <label>Project Submission Date</label>
         </div>
         <div class="user-box">
-            <label for="">Technology Used</label>
-            <select name="technology" id="">
-                <option value="java">JAVA</option>
-                <option value="python">PYTHON</option>
-                <option value="web">WEB</option>
-                <option value="android">ANDROID</option>
-            </select>
+          <label for="">Technology Used</label>
+          <select name="technology" id="">
+            <option value="java">JAVA</option>
+            <option value="python">PYTHON</option>
+            <option value="web">WEB</option>
+            <option value="android">ANDROID</option>
+          </select>
         </div>
         <div class="user-box">
-            <label for="">Mentor</label>
-            <select name="mentor" id="" style="width: 40%;">
-                <option value="p1">Mr.Pankaj Kapoor</option>
-                <option value="p2">Mr. Amir Khan</option>
-                <option value="p3">Mr. Neeraj Khanna</option>
-                <option value="ap4">Mr. Divyansh Bhardwaj</option>
-            </select>
+          <label for="">Mentor</label>
+          <select name="mentor" id="" style="width: 40%">
+            <option value="p1">Mr.Pankaj Kapoor</option>
+            <option value="p2">Mr. Amir Khan</option>
+            <option value="p3">Mr. Neeraj Khanna</option>
+            <option value="ap4">Mr. Divyansh Bhardwaj</option>
+          </select>
         </div>
         <a href="#">
           <span></span>
@@ -227,6 +275,11 @@
           Assign
         </a>
       </form>
+    </div>
+    <div id="mybutton">
+      <button value="Back to Dashboard" class="dashboard">
+        <a href="./Admin-dashboard1.html">Back To Dashboard</a>
+      </button>
     </div>
   </body>
 </html>
