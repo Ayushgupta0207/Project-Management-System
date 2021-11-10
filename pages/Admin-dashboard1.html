@@ -77,8 +77,8 @@
     }
     
     #content {
-      /* padding: 20px; */
-      margin-left: 2%;
+      /* padding: auto; */
+      /* margin-left: 2%; */
       transition: margin-left 0.7s;
       overflow: hidden;
       width: 100%;
@@ -101,6 +101,30 @@
 
         
       }
+      .notification {
+  background-color: #555;
+  color: white;
+  text-decoration: none;
+  /* padding: 15px 26px; */
+  position: relative;
+  /* display: inline-block; */
+  border-radius: 2px;
+  float: right;
+}
+
+.notification:hover {
+  background: red;
+}
+
+.notification .badge {
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  padding: 5px 10px;
+  border-radius: 50%;
+  background: red;
+  color: white;
+}
       .submitted{
         height: 45px;
         width: 70%;
@@ -254,7 +278,7 @@ tr,td:nth-child(odd){
         border-radius: 20px;
       }
      }
-     @media (max-width:380px){
+     @media (max-width:420px){
       .project-table{
     
     display: flex;
@@ -308,6 +332,10 @@ td{
             </a>
           </span>
           <i class="fa fa-chart-line"></i>&nbsp Dashboard
+          <!-- <a href="#" class="notification">
+            <span>Inbox</span>
+            <span class="badge">3</span>
+          </a> -->
         </header>
   
   
@@ -326,8 +354,8 @@ td{
 
           <a href="./Admin-dashboard1.html" class="an">Dashboard</a>
           <a href="./Adminprojects.html" class="an">Projects</a>
-          <a href="#" class="an">Track Projects</a>
-          <a href="../pages/newProject.html" class="an"><i class="fa fa-plus"> </i> New Project</a>
+          <!-- <a href="#" class="an">Track Projects</a> -->
+          <a href="./newProject.html" class="an"><i class="fa fa-plus"> </i> New Project</a>
           <a href="./Adminprofile.html" class="an">My Profile</a>
           <a href="./Instructor_login.html" class="an">SignOut</a>
         
