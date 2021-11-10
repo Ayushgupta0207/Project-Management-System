@@ -14,3 +14,9 @@
 <h1>Day-5:</h1>
 <p>-Add New Projects In module </p>
 <p>-Design Admin Profile</p>
+<h1>Day-6:</h1>
+<p>-Add Second New Projects In module </p>
+<p>-Make Student Module responsive</p>
+<h1>Day-5:</h1>
+<p>-Add functionality in project section </p>
+<p>-Make Admin module reponsive</p>
