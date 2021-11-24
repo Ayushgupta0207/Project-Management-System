@@ -134,7 +134,7 @@
         <form
           class="form"
           name="myform"
-          onsubmit="return validateform()"
+          onsubmit="return validateForm()"
           method="post"
         >
           <label for="email"></label>
@@ -155,9 +155,10 @@
         </form>
         <button class="btn"><a href="./Admin-dashboard1.html">Login</a></button>
       </center>
+      
     </main>
     <script>
-      function validateform() {
+      function validateForm() {
         var name = document["myform"]["email"].value;
         var password = document["myform"]["password"].value;
         if(name==null|| name ==""){
