@@ -155,18 +155,28 @@
        
     </main>
     <script>
-      function validateform() {
-        var name = document["myform"]["email"].value;
-        var password = document["myform"]["password"].value;
-        if(name==null|| name ==""){
-          alert("Name must be fiiled");
-          return false;
-        } 
-        else if(password.length<6){
-          alert("Password must be at least 6 chrachters long");
-          return false;
-        }
-      }
+      // function validateform() {
+      //   var name = document["myform"]["email"].value;
+      //   var password = document["myform"]["password"].value;
+      //   if(name==null|| name ==""){
+      //     alert("Name must be fiiled");
+      //     return false;
+      //   } 
+      //   else if(password.length<6){
+      //     alert("Password must be at least 6 chrachters long");
+      //     return false;
+      //   }
+      // } <script type="text/javascript">
+     
+  function validateForm() {
+    var a = document.forms["Form"]["answer_a"].value;
+    var b = document.forms["Form"]["answer_b"].value;
+    if (a == null || a == "", b == null || b == "", c == null || c == "", d == null || d == "") {
+      alert("Please Fill All Required Field");
+      return false;
+    }
+  }
+
     </script>
 </body>
 </html>
